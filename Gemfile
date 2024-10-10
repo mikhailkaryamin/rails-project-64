@@ -49,8 +49,16 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
+  gem 'rubocop'
+
+  gem 'rubocop-rake'
+
+  gem 'rubocop-rspec'
+
   # Use sqlite3 as the database for Active Record
   gem "sqlite3", ">= 1.4"
+
+  gem 'slim_lint', '~> 0.31.0'
 end
 
 group :development do
@@ -62,4 +70,5 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem 'minitest-power_assert'
 end
