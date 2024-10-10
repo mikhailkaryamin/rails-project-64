@@ -9,9 +9,9 @@ gem "sprockets-rails"
 gem "puma", ">= 5.0"
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+# Hotwire"s SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+# Hotwire"s modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
 gem "cssbundling-rails"
@@ -36,7 +36,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 group :production do
-  gem 'pg'
+  gem "pg"
 end
 
 group :development, :test do
@@ -49,16 +49,16 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
-  gem 'rubocop'
+  gem "rubocop"
 
-  gem 'rubocop-rake'
+  gem "rubocop-rake"
 
-  gem 'rubocop-rspec'
+  gem "rubocop-rspec"
 
   # Use sqlite3 as the database for Active Record
   gem "sqlite3", ">= 1.4"
 
-  gem 'slim_lint', '~> 0.31.0'
+  gem "slim_lint", "~> 0.31.0"
 end
 
 group :development do
@@ -70,5 +70,5 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-  gem 'minitest-power_assert'
+  gem "minitest-power_assert"
 end
