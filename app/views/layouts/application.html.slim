@@ -14,11 +14,11 @@ html.h-100
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
   body.d-flex.flex-column.h-100
-    = render 'layouts/shared/flash'
+    = render "layouts/shared/flash"
 
-    = render 'layouts/shared/header'
-    
-    = render 'layouts/shared/main'
-        = yield
+    = render "layouts/shared/header"
 
-    = render 'layouts/shared/footer'
+    = render layout: "layouts/shared/main" do
+      = yield
+
+    = render "layouts/shared/footer"

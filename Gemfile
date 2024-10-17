@@ -63,6 +63,8 @@ group :development, :test do
   gem "sqlite3", ">= 1.4"
 
   gem "slim_lint", "~> 0.31.0"
+
+  gem "byebug", "~> 11.1"
 end
 
 group :development do
@@ -78,5 +80,3 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
-
-gem "byebug", "~> 11.1", :groups => [:development, :test]
