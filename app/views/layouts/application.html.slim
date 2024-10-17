@@ -1,5 +1,5 @@
 doctype html
-html
+html.h-100
   head
     title
       = content_for(:title) || "Rails Project 64"
@@ -13,8 +13,12 @@ html
     link[rel="apple-touch-icon" href="/icon.png"]
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
-  body
-    = render 'layouts/shared/nav'
+  body.d-flex.flex-column.h-100
     = render 'layouts/shared/flash'
 
-    = yield
+    = render 'layouts/shared/header'
+    
+    = render 'layouts/shared/main'
+        = yield
+
+    = render 'layouts/shared/footer'

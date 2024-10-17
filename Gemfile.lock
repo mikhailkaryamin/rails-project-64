@@ -83,6 +83,7 @@ GEM
     brakeman (6.2.1)
       racc
     builder (3.3.0)
+    byebug (11.1.3)
     capybara (3.40.0)
       addressable
       matrix
@@ -265,6 +266,9 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    simple_form (5.3.1)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     slim (5.2.1)
       temple (~> 0.10.0)
       tilt (>= 2.1.0)
@@ -342,6 +346,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   brakeman
+  byebug (~> 11.1)
   capybara
   cssbundling-rails
   debug
@@ -357,6 +362,7 @@ DEPENDENCIES
   rubocop-rake
   rubocop-rspec
   selenium-webdriver
+  simple_form
   slim-rails
   slim_lint (~> 0.31.0)
   sprockets-rails
