@@ -65,6 +65,8 @@ group :development, :test do
   gem "slim_lint", "~> 0.31.0"
 
   gem "byebug", "~> 11.1"
+
+  gem "faker"
 end
 
 group :development do

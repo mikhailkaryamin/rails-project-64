@@ -1,0 +1,10 @@
+p style="color: green" = notice
+
+h1 Posts
+
+.row
+  .col-md-12
+    - @posts.each do |post|
+      == render post, post: @post
+
+= link_to "New post", new_post_path
