@@ -34,6 +34,8 @@ gem "bootsnap", require: false
 
 gem "slim-rails"
 
+gem "simple_form"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -61,6 +63,10 @@ group :development, :test do
   gem "sqlite3", ">= 1.4"
 
   gem "slim_lint", "~> 0.31.0"
+
+  gem "byebug", "~> 11.1"
+
+  gem "faker"
 end
 
 group :development do

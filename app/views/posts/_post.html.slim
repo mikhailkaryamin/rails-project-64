@@ -1,0 +1,13 @@
+.card.mb-3
+  .card-body
+    h2.h5.card-title
+      = link_to post.title, post, class: "link-dark text-decoration-none"
+
+    = simple_format post.body, { class: "card-text mb-2" }, wrapper_tag: "div"
+
+    .text-right.small.text-muted.mt-auto
+      span
+        = post.category.name
+      '
+      span
+        = post.creator.email

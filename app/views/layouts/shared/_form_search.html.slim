@@ -1,0 +1,8 @@
+= simple_form_for :search, url: post_path(:title), html: { class: "d-flex" }, method: :get do |p|
+  = p.input :title,
+    label: false,
+    wrapper_html: { class: "me-2" },
+    input_html: { class: "form-control" },
+    placeholder: "Заголовок поста"
+
+  = p.button :submit, "Поиск", class: "btn btn-outline-success", id: "submit"
