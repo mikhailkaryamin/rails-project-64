@@ -39,6 +39,8 @@ gem "simple_form"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem "faker"
+
 group :production do
   gem "pg"
 end
@@ -65,8 +67,6 @@ group :development, :test do
   gem "slim_lint", "~> 0.31.0"
 
   gem "byebug", "~> 11.1"
-
-  gem "faker"
 end
 
 group :development do
