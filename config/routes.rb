@@ -9,5 +9,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "homes#index"
 
-  resources :posts
+  resources :posts do
+    scope module: :posts do
+      resources :comments
+    end
+  end
 end

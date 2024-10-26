@@ -41,6 +41,8 @@ gem "simple_form"
 
 gem "faker"
 
+gem "ancestry"
+
 group :production do
   gem "pg"
 end
