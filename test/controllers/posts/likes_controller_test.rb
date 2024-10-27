@@ -5,15 +5,26 @@ class Posts::LikesControllerTest < ActionDispatch::IntegrationTest
 
   setup do
     @post = posts(:one)
+    @post_like = post_likes(:one)
   end
 
-  test "should create comment" do
+  test "should add like" do
     sign_in users(:one)
 
-    assert_difference("LikePost.count") do
+    assert_difference("PostLike.count") do
       post post_likes_url(@post)
     end
 
-    assert_redirected_to post_path(LikePost.last.post)
+    assert_redirected_to post_path(@post)
+  end
+
+  test "should destroy like" do
+    sign_in users(:two)
+
+    delete post_like_url(@post, @post_like)
+
+    assert { !PostLike.exists?(@post_like.id) }
+
+    assert_redirected_to post_path(@post)
   end
 end
