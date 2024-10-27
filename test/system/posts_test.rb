@@ -16,12 +16,14 @@ class PostsTest < ApplicationSystemTestCase
     sign_in users(:one)
 
     visit posts_url
+
     click_on "Новый пост"
 
     fill_in "Текст поста", with: @post.body
-    select("Category1", from: "Категория")
+
+    select("js", from: "Категория")
+
     fill_in "form_header_test_id", with: @post.title
-    click_on "Опубликовать пост"
 
     assert_text "Post was successfully created"
   end

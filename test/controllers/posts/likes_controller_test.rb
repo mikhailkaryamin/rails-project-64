@@ -9,7 +9,7 @@ class Posts::LikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should add like" do
-    sign_in users(:one)
+    sign_in users(:two)
 
     assert_difference("PostLike.count") do
       post post_likes_url(@post)
@@ -19,7 +19,7 @@ class Posts::LikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy like" do
-    sign_in users(:two)
+    sign_in users(:one)
 
     delete post_like_url(@post, @post_like)
 

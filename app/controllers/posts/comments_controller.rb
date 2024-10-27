@@ -13,7 +13,8 @@ module Posts
 
     def create
       @post_comment = @post.comments.build(post_comment_params)
-      @post_comment.creator = current_user
+      @post_comment.user = current_user
+
       if @post_comment.save
         redirect_to post_path(@post), notice: "Comment was successfully created."
       else

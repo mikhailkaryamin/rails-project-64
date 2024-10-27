@@ -12,7 +12,7 @@ class CommentsTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit post_url(@post)
-    assert_selector "#comment-#{@comment.id}", text: "first comment"
+    assert_selector "#comment-#{@comment.id}", text: @comment.content
   end
 
   test "should create comment" do

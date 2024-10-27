@@ -8,7 +8,7 @@ class LikesTest < ApplicationSystemTestCase
   end
 
   test "should add like" do
-    sign_in users(:one)
+    sign_in users(:two)
 
     visit post_url(@post)
 
@@ -20,7 +20,7 @@ class LikesTest < ApplicationSystemTestCase
   end
 
   test "should destroy like" do
-    sign_in users(:two)
+    sign_in users(:one)
 
     visit post_url(@post)
 

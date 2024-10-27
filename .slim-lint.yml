@@ -1,5 +1,11 @@
+---
+
 exclude:
-  - 'app/views/devise/**/*.slim'
+  - vendor/*
+  - node_modules/*
+  - '**/devise/**/*.slim'
+
 linters:
+
   LineLength:
-    max: 120
+    max: 180
