@@ -16,7 +16,7 @@ class PostsTest < ApplicationSystemTestCase
     sign_in users(:one)
 
     visit posts_url
-    click_on "New post"
+    click_on "Новый пост"
 
     fill_in "Текст поста", with: @post.body
     select("Category1", from: "Категория")

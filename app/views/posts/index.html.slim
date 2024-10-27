@@ -6,5 +6,3 @@ h1 Posts
   .col-md-12
     - @posts.each do |post|
       == render post, post: @post
-
-= link_to "New post", new_post_path
