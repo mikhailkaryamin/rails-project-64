@@ -19,10 +19,11 @@ module Posts
     def destroy
       if already_liked?
         @post_like.destroy
-        redirect_back_or_to post_path(@post)
       else
         flash[:notice] = t('likes.error.unlike')
       end
+
+      redirect_back_or_to post_path(@post)
     end
 
     private
