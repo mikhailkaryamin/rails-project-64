@@ -18,12 +18,10 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.creator = current_user
 
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: "Post was successfully created." }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-      end
+    if @post.save
+      redirect_to @post, notice: "Post was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 

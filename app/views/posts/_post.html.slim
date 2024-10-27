@@ -5,9 +5,22 @@
 
     = simple_format post.body, { class: "card-text mb-2" }, wrapper_tag: "div"
 
-    .text-right.small.text-muted.mt-auto
-      span
-        = post.category.name
-      '
-      span
-        = post.creator.email
+    .d-flex.justify-content-between.mt-5
+      .post-section
+        span.me-2
+          = post.category.name
+        '
+        span
+          = post.creator.email
+      .likes-section
+        span.me-2
+          = post.likes.count
+        '
+        - pre_like = post.likes.find { |like| like.user_id == current_user.id }
+
+        - if pre_like
+          = link_to post_like_path(post, pre_like), class: "link-dark", data: { turbo_method: :delete }
+              i.bi.bi-hand-thumbs-up-fill
+        - else
+          = link_to post_likes_path(post), class: "link-dark", data: { turbo_method: :post }
+              i.bi.bi-hand-thumbs-up

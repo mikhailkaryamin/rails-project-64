@@ -14,12 +14,10 @@ module Posts
     def create
       @post_comment = @post.comments.build(post_comment_params)
       @post_comment.creator = current_user
-      respond_to do |format|
-        if @post_comment.save
-          format.html { redirect_to post_path(@post), notice: "Comment was successfully created." }
-        else
-          format.html { redirect_to post_path(@post), status: :unprocessable_entity }
-        end
+      if @post_comment.save
+        redirect_to post_path(@post), notice: "Comment was successfully created."
+      else
+        redirect_to post_path(@post), status: :unprocessable_entity
       end
     end
 
