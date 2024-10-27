@@ -11,23 +11,18 @@ module Posts
         flash[:notice] = t('likes.error.more_than_one')
       else
         @post_like = @post.likes.build(user_id: current_user.id)
-
-        if @post_like.save
-          redirect_to post_path(@post)
-        else
-          redirect_to post_path(@post), status: :unprocessable_entity
-        end
-
+        @post_like.save
+        redirect_back_or_to post_path(@post)
       end
     end
 
     def destroy
       if already_liked?
         @post_like.destroy
+        redirect_back_or_to post_path(@post)
       else
         flash[:notice] = t('likes.error.unlike')
       end
-      redirect_to post_path(@post)
     end
 
     private
