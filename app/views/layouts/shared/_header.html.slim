@@ -5,14 +5,14 @@ header
         | Logo
       ul.navbar-nav.me-auto.mb-2.mb-md-0
         li.nav-item.me-2
-          = link_to "Главная", root_path, class: "nav-link"
+          = link_to 'Главная', root_path, class: 'nav-link'
         li.nav-item.me-2
-          = link_to "Посты", posts_path, class: "nav-link"
-        - if !user_signed_in?
+          = link_to 'Посты', posts_path, class: 'nav-link'
+        - unless user_signed_in?
           li.nav-item.me-2
-            = link_to "Вход", new_user_session_path, class: "nav-link"
+            = link_to 'Вход', new_user_session_path, class: 'nav-link'
           li.nav-item.me-2
-            = link_to "Регистрация", new_user_registration_path, class: "nav-link"
+            = link_to 'Регистрация', new_user_registration_path, class: 'nav-link'
 
       ul.navbar-nav.mb-2.mb-md-0
         - if user_signed_in?
@@ -20,6 +20,6 @@ header
               p.nav-link.disabled.mb-0
                 = current_user[:email]
             li.nav-item.me-2
-              = link_to "Новый пост", new_post_path, class: "nav-link"
+              = link_to 'Новый пост', new_post_path, class: 'nav-link'
             li.nav-item.me-2
-              = link_to "Выход", destroy_user_session_path, class: "nav-link"
+              = link_to 'Выход', destroy_user_session_path, class: 'nav-link'

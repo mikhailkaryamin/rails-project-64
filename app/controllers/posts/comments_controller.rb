@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module Posts
   class CommentsController < ApplicationController
-    before_action :set_post, only: %i[ index create ]
-    before_action :authenticate_user!, only: %i[ create ]
+    before_action :set_post, only: %i[index create]
+    before_action :authenticate_user!, only: %i[create]
 
     def index
       @post_comments = @post.comments
@@ -16,19 +18,20 @@ module Posts
       @post_comment.user = current_user
 
       if @post_comment.save
-        redirect_to post_path(@post), notice: "Comment was successfully created."
+        redirect_to post_path(@post), notice: t('comments.success_notice')
       else
         redirect_to post_path(@post), status: :unprocessable_entity
       end
     end
 
     private
-      def set_post
-        @post = Post.find(params[:post_id])
-      end
 
-      def post_comment_params
-        params.require(:post_comment).permit(:content, :parent_id)
-      end
+    def set_post
+      @post = Post.find(params[:post_id])
+    end
+
+    def post_comment_params
+      params.require(:post_comment).permit(:content, :parent_id)
+    end
   end
 end

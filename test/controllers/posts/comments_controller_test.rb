@@ -1,4 +1,6 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class CommentsControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
@@ -8,10 +10,10 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     @post = posts(:one)
   end
 
-  test "should create comment" do
+  test 'should create comment' do
     sign_in users(:one)
-    assert_difference("PostComment.count") do
-      post post_comments_url(@post), params: { post_comment: { content: "text", parent_id: "" } }
+    assert_difference('PostComment.count') do
+      post post_comments_url(@post), params: { post_comment: { content: 'text', parent_id: '' } }
     end
 
     assert_redirected_to post_path(PostComment.last.post)

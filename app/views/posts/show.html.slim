@@ -1,10 +1,11 @@
-p style="color: green" = notice
+p style='color: green' = notice
 
 == render @post
 
 .lead.mt-3
   span
     | Комментарии
-    = render "posts/comments/new"
+    = render 'posts/comments/new'
 
-    = nested_comments @post.comments.roots
+    - allowed_attributes = Loofah::HTML5::SafeList::ALLOWED_ATTRIBUTES.add('id')
+    = sanitize nested_comments(@post.comments.roots), attributes: allowed_attributes

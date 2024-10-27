@@ -4,14 +4,14 @@
 
   .form-group.text.required.post_comment_content
     = f.input_field :content,
-      class: "form-control"
+      class: 'form-control'
 
   .form-group.hidden.post_comment_parent_id
     = f.input_field :parent_id,
-      class: "form-control hidden",
+      class: 'form-control hidden',
       value: locals[:parent_comment_id],
-      type: "hidden",
-      name: "post_comment[parent_id]",
-      id: "post_comment_parent_id"
+      type: 'hidden',
+      name: 'post_comment[parent_id]',
+      id: 'post_comment_parent_id'
 
-  = f.button :submit, "Оставить комментарий", class: "btn btn-primary mt-2"
+  = f.button :submit, 'Оставить комментарий', class: 'btn btn-primary mt-2'

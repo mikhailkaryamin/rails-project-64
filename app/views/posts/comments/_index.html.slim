@@ -1,19 +1,19 @@
 .card.mt-2.rounded-0 id="comment-#{comment.id}"
   .card-header.border-0
-    = link_to "#", "#comment-#{comment.id}", class: "me-2"
+    = link_to '#', "#comment-#{comment.id}", class: 'me-2'
     span.me-2
       = @post.creator.email
     span.fs-6.text-muted
-      = comment.created_at.to_formatted_s(:short)
+      = comment.created_at.to_fs(:short)
   .card-body.border-0
     p.card-text
       = comment.content
   - if user_signed_in?
       .card-footer.border-0
         a.fs-6.text-decoration-underline.text-lowercase{
-          role="button"
-          data-bs-toggle="collapse"
-          aria-expanded="false"
+          role='button'
+          data-bs-toggle='collapse'
+          aria-expanded='false'
           aria-controls="response_comment-#{comment.id}"
           data-bs-target="#response_comment-#{comment.id}"
           href="#response_comment-#{comment.id}"
@@ -22,6 +22,7 @@
         .collapse.ms-2{
           id="response_comment-#{comment.id}"
         }
-          = render "posts/comments/form", locals: { parent_comment_id: comment.id }
+          = render 'posts/comments/form', locals: { parent_comment_id: comment.id }
 
-  = nested_comments comment.children
+  - allowed_attributes = Loofah::HTML5::SafeList::ALLOWED_ATTRIBUTES.add('id')
+  = sanitize nested_comments(comment.children), attributes: allowed_attributes

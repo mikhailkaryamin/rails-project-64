@@ -1,4 +1,6 @@
-require "application_system_test_case"
+# frozen_string_literal: true
+
+require 'application_system_test_case'
 
 class PostsTest < ApplicationSystemTestCase
   include Devise::Test::IntegrationHelpers
@@ -7,24 +9,24 @@ class PostsTest < ApplicationSystemTestCase
     @post = posts(:one)
   end
 
-  test "visiting the index" do
+  test 'visiting the index' do
     visit posts_url
-    assert_selector "h1", text: "Posts"
+    assert_selector 'h1', text: 'Posts'
   end
 
-  test "should create post" do
+  test 'should create post' do
     sign_in users(:one)
 
     visit posts_url
 
-    click_on "Новый пост"
+    click_on 'Новый пост'
 
-    fill_in "Текст поста", with: @post.body
+    fill_in 'Текст поста', with: @post.body
 
-    select("js", from: "Категория")
+    select('js', from: 'Категория')
 
-    fill_in "form_header_test_id", with: @post.title
+    fill_in 'form_header_test_id', with: @post.title
 
-    assert_text "Post was successfully created"
+    assert_text 'Post was successfully created'
   end
 end
