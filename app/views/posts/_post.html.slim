@@ -14,7 +14,7 @@
           = post.creator.email
       .likes-section
         span.me-2 id="count-like-#{post.id}"
-          = post.likes.count
+          = post.likes.size
         '
         - pre_like = post.likes.find { |like| like.user_id == current_user&.id }
 

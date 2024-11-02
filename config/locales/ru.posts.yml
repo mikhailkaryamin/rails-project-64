@@ -1,0 +1,12 @@
+ru:
+  posts:
+    form:
+      form_title: Новый пост
+      body: Текст поста
+      title: Заголовок поста
+      category: Категория
+      submit: Опубликовать пост
+    show:
+      comments: Комментарии
+    success_notice: Пост успешно создан.
+    title: Посты

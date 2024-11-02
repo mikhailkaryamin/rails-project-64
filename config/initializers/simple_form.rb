@@ -173,4 +173,10 @@ SimpleForm.setup do |config|
   # Defines validation classes to the input_field. By default it's nil.
   # config.input_field_valid_class = 'is-valid'
   # config.input_field_error_class = 'is-invalid'
+
+  config.wrappers :user_form, class: 'form-group' do |b|
+    b.use :label
+    b.use :input, class: 'form-control', error_class: 'is-invalid', valid_class: 'is-valid'
+    b.use :error, wrap_with: { tag: 'div', class: 'invalid-feedback' }
+  end
 end

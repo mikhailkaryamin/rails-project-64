@@ -5,18 +5,18 @@
   .form-inputs
     .form-group
       = f.input :body,
-        label: 'Текст поста',
+        label: t('posts.form.body'),
         input_html: { class: 'form-control' }
     .form-group
       = f.input :title,
-        label: 'Заголовок поста',
+        label: t('posts.form.title'),
         input_html: { class: 'form-control', id: 'form_header_test_id' },
         wrapper_html: { class: 'mb-2' }
     .form-group
       = f.association :category,
-        label: 'Категория',
+        label: t('posts.form.category'),
         input_html: { class: 'form-control' },
         wrapper_html: { class: 'mb-2' }
 
   .form-actions
-    = f.button :submit, 'Опубликовать пост', class: 'btn btn-outline-success'
+    = f.button :submit, t('posts.form.submit'), class: 'btn btn-outline-success'

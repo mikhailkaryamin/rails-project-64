@@ -7,21 +7,17 @@ module Posts
     before_action :authenticate_user!, only: %i[create destroy]
 
     def create
-      if already_liked?
-        flash[:notice] = t('likes.error.more_than_one')
-      else
+      unless already_liked?
         @post_like = @post.likes.build(user_id: current_user.id)
+
         @post_like.save
-        redirect_back_or_to post_path(@post)
       end
+
+      redirect_back_or_to post_path(@post)
     end
 
     def destroy
-      if already_liked?
-        @post_like.destroy
-      else
-        flash[:notice] = t('likes.error.unlike')
-      end
+      already_liked? && @post_like.destroy
 
       redirect_back_or_to post_path(@post)
     end

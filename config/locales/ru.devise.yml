@@ -1,0 +1,27 @@
+# Additional translations at https://github.com/heartcombo/devise/wiki/I18n
+
+ru:
+  devise:
+    failure:
+      already_authenticated: "Вы уже вошли в систему."
+      invalid: "Неверный %{authentication_keys} или пароль."
+      not_found_in_database: "Неверный %{authentication_keys} или пароль."
+    registrations:
+      signed_up: "Добро пожаловать! Вы успешно зарегистрировались."
+      submit: Регистрация
+      minimum_password: "минимум %{count} знаков"
+      password: Пароль
+      password_confirm: Подтверждение пароля
+    sessions:
+      signed_in: "Авторизация выполнена успешно."
+      signed_out: "Выход выполнен успешно."
+      already_signed_out: "Выход выполнен успешно."
+      password: Пароль
+      remember_me: Запомнить
+      submit: Войти
+    links:
+      registration: Регистрация
+      session: Войти
+  errors:
+    messages:
+      not_found: "не найдено"

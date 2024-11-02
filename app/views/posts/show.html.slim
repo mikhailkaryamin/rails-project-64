@@ -4,7 +4,7 @@ p style='color: green' = notice
 
 .lead.mt-3
   span
-    | Комментарии
+    = t('posts.show.comments')
     = render 'posts/comments/new'
 
     - allowed_attributes = Loofah::HTML5::SafeList::ALLOWED_ATTRIBUTES.add('id')
