@@ -24,5 +24,4 @@
         }
           = render 'posts/comments/form', locals: { parent_comment_id: comment.id }
 
-  - allowed_attributes = Loofah::HTML5::SafeList::ALLOWED_ATTRIBUTES.add('id')
-  = sanitize nested_comments(comment.children), attributes: allowed_attributes
+  = sanitize nested_comments(comment.children), attributes: ALLOWED_ATTRIBUTES, tags: ALLOWED_ELEMENTS

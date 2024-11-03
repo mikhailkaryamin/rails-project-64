@@ -6,6 +6,7 @@ ru:
       title: Заголовок поста
       category: Категория
       submit: Опубликовать пост
+      back: Назад к постам
     show:
       comments: Комментарии
     success_notice: Пост успешно создан.

@@ -13,12 +13,10 @@ html.h-100
     link[rel='apple-touch-icon' href='/icon.png']
     = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
     = javascript_include_tag 'application', 'data-turbo-track': 'reload', type: 'module'
-  body.d-flex.flex-column.h-100
+  body.d-flex.flex-column
     = render 'layouts/shared/header'
 
     = render 'layouts/shared/flash'
 
     = render layout: 'layouts/shared/main' do
       = yield
-
-    = render 'layouts/shared/footer'

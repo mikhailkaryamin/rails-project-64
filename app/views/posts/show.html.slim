@@ -7,5 +7,4 @@ p style='color: green' = notice
     = t('posts.show.comments')
     = render 'posts/comments/new'
 
-    - allowed_attributes = Loofah::HTML5::SafeList::ALLOWED_ATTRIBUTES.add('id')
-    = sanitize nested_comments(@post.comments.roots), attributes: allowed_attributes
+    = sanitize nested_comments(@post.comments.roots), attributes: ALLOWED_ATTRIBUTES, tags: ALLOWED_ELEMENTS
