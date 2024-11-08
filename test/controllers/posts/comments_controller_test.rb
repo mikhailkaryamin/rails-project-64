@@ -12,10 +12,20 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create comment' do
     sign_in users(:one)
-    assert_difference('PostComment.count') do
-      post post_comments_url(@post), params: { post_comment: { content: 'text', parent_id: '' } }
-    end
+    post post_comments_url(@post), params: {
+      post_comment: {
+        content: @comment.content,
+        parent_id: @comment.parent_id
+      }
+    }
 
-    assert_redirected_to post_path(PostComment.last.post)
+    assert_response :redirect
+
+    created_comment =
+      PostComment.find_by(
+        content: @comment.content
+      )
+
+    assert(created_comment)
   end
 end

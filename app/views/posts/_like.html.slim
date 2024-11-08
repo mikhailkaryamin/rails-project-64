@@ -1,0 +1,13 @@
+- if user_signed_in?
+  - pre_like = post.like_by_user current_user
+
+  - if pre_like
+    = link_to post_like_path(post, pre_like), id: "like-#{post.id}", class: 'link-dark', \
+      data: { turbo_method: :delete }
+        i.bi.bi-hand-thumbs-up-fill
+  - else
+    = link_to post_likes_path(post), id: "like-#{post.id}", class: 'link-dark', \
+      data: { turbo_method: :post }
+        i.bi.bi-hand-thumbs-up
+- else
+  i.bi.bi-hand-thumbs-up

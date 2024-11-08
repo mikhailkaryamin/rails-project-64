@@ -9,4 +9,8 @@ class Post < ApplicationRecord
 
   validates :body, presence: true
   validates :title, presence: true
+
+  def like_by_user(user)
+    likes.find_by(user:)
+  end
 end

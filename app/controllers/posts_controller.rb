@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[create]
 
   def index
-    @posts = Post.all
+    @posts = Post.includes(:category, :creator)
   end
 
   def show

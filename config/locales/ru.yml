@@ -1,2 +1,53 @@
 ru:
   title: Коллективный блог
+  comments:
+    form:
+      submit: Оставить комментарий
+      reply: Ответить
+    success_notice: Коммент успешно добавлен.
+  errors:
+    messages:
+      not_saved: "Проверьте введенные данные: "
+      blank: "Поле не может быть пустым"
+      required: "Обязательное поле"
+    attributes:
+      email:
+        blank: не должно быть пустым
+        invalid: неверный формат
+        taken: уже занят
+      password:
+        blank: не должно быть пустым
+        too_short: слишком короткий пароль
+      password_confirmation:
+        confirmation: не совпадает
+  likes:
+    error:
+      more_than_one: Нельзя ставить больше одного лайка
+      unlike: Нельзя лайкать
+  navbar:
+    home: Главная
+    posts: Посты
+    sign_in: Вход
+    sign_up: Регистрация
+    sign_out: Выход
+    new_post: Новый пост
+  posts:
+    form:
+      form_title: Новый пост
+      body: Текст поста
+      title: Заголовок поста
+      category: Категория
+      submit: Опубликовать пост
+      back: Назад к постам
+    show:
+      comments: Комментарии
+    success_notice: Пост успешно создан.
+    title: Посты
+  simple_form:
+    "yes": 'Да'
+    "no": 'Нет'
+    required:
+      text: 'обязательно'
+      mark: '*'
+    error_notification:
+      default_message: "Посмотрите ошибки ниже:"

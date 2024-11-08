@@ -1,6 +1,6 @@
 h2
   | Войти
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name), wrapper: :user_form) do |f|
+= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .form-inputs
 
     .form-group.email.user_email

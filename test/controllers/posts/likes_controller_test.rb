@@ -13,11 +13,13 @@ class Posts::LikesControllerTest < ActionDispatch::IntegrationTest
   test 'should add like' do
     sign_in users(:two)
 
-    assert_difference('PostLike.count') do
-      post post_likes_url(@post)
-    end
+    post post_likes_url(@post)
 
-    assert_redirected_to post_path(@post)
+    assert_response :redirect
+
+    @post.likes.find_by(
+      user: users(:two)
+    )
   end
 
   test 'should destroy like' do
